@@ -1,0 +1,14 @@
+import CourtCard from '../../components/CourtCard/CourtCard'
+import courts from '../../data/courts.json'
+
+
+const Courts = () => {
+    console.log('Courts', courts)
+    return (
+        <div className='px-4 mt-6 flex flex-row space-x-12'>
+            {courts.map((court) => <CourtCard props={court} />)}
+        </div>
+    )
+}
+
+export default Courts
