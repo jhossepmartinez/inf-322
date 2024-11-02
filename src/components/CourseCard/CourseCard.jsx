@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const CourseCard = ({props}) => {
     const { name, image, numCourses, weekdays } = props;
     return (
-        <div className='w-64 border rounded-2xl'>
+        <div className='card w-64 border rounded-2xl'>
             <div><img className="rounded-t-2xl w-64 h-40 object-cover" src={image} alt="" /></div>
             <div className='px-4 py-4'>
                 <h2>{name}</h2>
@@ -13,7 +13,7 @@ const CourseCard = ({props}) => {
                     <li>{weekdays}</li>
                 </ul>
                 <div className='pt-4'>
-                    <Link className='' to={`${name}`}>Paralelos<RightOutlined /></Link>
+                    <Link className='btn-card' to={`${name}`}>Paralelos<RightOutlined /></Link>
                 </div>
             </div>
         </div>

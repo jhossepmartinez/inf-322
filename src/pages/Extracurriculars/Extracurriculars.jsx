@@ -4,7 +4,7 @@ import extracurriculars from '../../data/extracurriculars.json';
 const Extracurriculars = () => {
 
     return (
-        <div className='px-4 mt-6 flex flex-row space-x-12'>
+        <div className='container-cards px-4 mt-6 flex flex-row space-x-12'>
             {extracurriculars.map((extracurricular) => {
                 const name = extracurricular.name;
                 const image = extracurricular.image;

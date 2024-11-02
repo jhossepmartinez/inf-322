@@ -5,7 +5,7 @@ import courts from '../../data/courts.json'
 const Courts = () => {
     console.log('Courts', courts)
     return (
-        <div className='px-4 mt-6 flex flex-row space-x-12'>
+        <div className='container-cards px-4 mt-6 flex flex-row space-x-12'>
             {courts.map((court) => <CourtCard props={court} />)}
         </div>
     )
