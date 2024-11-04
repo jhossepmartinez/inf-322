@@ -6,12 +6,12 @@ const BreadCrumbs = () => {
     const crumbs = location.pathname.split('/').slice(1, location.pathname.length)
     console.log('LOCATION', crumbs)
     return (
-        <div>
+        <div className='text-sm px-4 font-medium'>
             {crumbs.map((crumb, index) => {
                 const decodedCrumb = decodeURI(crumb)
                 return (
                     <span key={index}>
-                        {index !== crumbs.length - 1 ? <Link to={`/${decodedCrumb}`}> {decodedCrumb} </Link> : <span>{decodedCrumb}</span>}
+                        {index !== crumbs.length - 1 ? <Link to={`/${decodedCrumb}`}> {decodedCrumb.charAt(0).toUpperCase() + decodedCrumb.slice(1)} </Link> : <span>{decodedCrumb.charAt(0).toUpperCase() + decodedCrumb.slice(1)}</span>}
                         {index !== crumbs.length - 1 && <span> <RightOutlined /> </span>}
                     </span>
                 )})}

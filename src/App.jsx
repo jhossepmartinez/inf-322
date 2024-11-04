@@ -22,7 +22,7 @@ import { ToastContainer } from 'react-toastify';
 const Layout = () => {
     const location = useLocation()
     return (
-        <div className='px-4 space-y-3'>
+        <div className='space-y-3'>
             <TitleHeader />
             {location.pathname !== '/' && <Header />}
             {location.pathname !== '/' && <BreadCrumbs />}

@@ -14,19 +14,19 @@ const CourseBigCard = ({ props }) => {
 
     return (
         <>
-            <div className='columns-2'>
-                <div className="border p-4 h-64 rounded-2xl">
+            <div className='columns-2 overflow-hidden'>
+                <div className="border  bg-white p-4 h-64 rounded-2xl">
                     <ul className="space-y-4">
-                        <li>Paralelo {courseCode}</li>
-                        <li>Profesor: {instructor}</li>
-                        <li>Horario: {weekDay} {time}</li>
-                        <li>Lugar: {courtName}</li>
+                        <li><span className='font-medium'>Paralelo:</span> {courseCode}</li>
+                        <li><span className='font-medium'>Profesor:</span> {instructor}</li>
+                        <li><span className='font-medium'>Horario:</span> {weekDay} {time}</li>
+                        <li><span className='font-medium'>Lugar:</span> {courtName}</li>
                     </ul>
                     <div className='mt-8'>
                         <button 
-                            className='border rounded-xl px-6 py-2'
+                            className='hover:bg-sky-300 border rounded-xl px-6 py-2'
                             onClick={handleEnroll}
-                            disabled={enrolled} // Disable button if already enrolled
+                            disabled={enrolled} 
                         >
                             {enrolled ? 'Inscripto' : 'Inscribirse'} 
                         </button>
