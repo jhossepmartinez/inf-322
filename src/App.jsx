@@ -15,6 +15,8 @@ import {
     useLocation
 } from 'react-router-dom';
 import Selections from './pages/Selections/Selections';
+import Gyms from './pages/Gyms/Gyms';
+import Equipment from './pages/Equipment/Equipment';
 import { ToastContainer } from 'react-toastify';
 
 const Layout = () => {
@@ -37,10 +39,12 @@ function App() {
                 <Route path="/" element={<div className='flex h-screen'><Home /></div>} />
                 <Route path="/talleres" element={<Extracurriculars />}/>
                 <Route path="/selecciones" element={<Selections />} />
-                <Route path="/gimnasio" />
+                <Route path="/gimnasio" element={<Gyms/>}/>
                 <Route path="/canchas" element={<Courts />} />
                 <Route path="/talleres/:extracurricularName" element={<CourseBigCards />} />
                 <Route path="/canchas/:canchaName" element={<BlockSelector />} />
+                <Route path="/gimnasio/:gymName" element={<BlockSelector />} />
+                <Route path="/gimnasio/Equipamiento" element={<Equipment />} />
             </Routes>
         </BrowserRouter >
     )

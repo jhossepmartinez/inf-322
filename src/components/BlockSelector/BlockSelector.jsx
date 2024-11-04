@@ -42,12 +42,12 @@ const BlockSelector = () => {
     };
 
     return (
-        <div className="mt-6 flex flex-col items-center">
+<div className="mt-6 flex flex-col items-center">
             <div className="flex flex-col space-y-2">
                 <div className="flex">
                     <div className="w-24"></div>
                     {times.map((time, index) => (
-                        <div key={index} className="w-20 text-center font-semibold">
+                        <div key={index} className="w-24 text-center font-semibold">
                             {time}
                         </div>
                     ))}
