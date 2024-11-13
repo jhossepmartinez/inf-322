@@ -30,6 +30,7 @@ const BlockSelector = () => {
     };
 
     const handleReserve = () => {
+        if (selectedSlots.length === 0) return
         const newAvailability = [...availability]; 
 
         selectedSlots.forEach(slot => {
@@ -43,7 +44,7 @@ const BlockSelector = () => {
     };
 
     return (
-<div className="mt-6 flex flex-col items-center">
+        <div className="mt-6 flex flex-col items-center">
             <div className="flex flex-col space-y-1">
                 <div className="flex">
                     <div className="w-24"></div>
@@ -105,7 +106,7 @@ const BlockSelector = () => {
                 ))}
             </div>
             <button
-                className="mt-4 px-6 py-3 bg-gray-300 rounded-md font-bold hover:bg-gray-400 focus:outline-none"
+                className={`mt-4 px-6 py-3 text-white bg-gray-300 rounded-md font-bold focus:outline-none ${selectedSlots.length !== 0 ? 'cursor-pointer bg-[#005E90] transition-colors duration-300 transform transition-transform duration-200 hover:scale-[1.03]' : 'cursor-not-allowed'}`}
                 onClick={handleReserve}
             >
                 Reservar
