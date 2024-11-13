@@ -24,11 +24,12 @@ const CourseBigCard = ({ props }) => {
                     </ul>
                     <div className='mt-8'>
                         <button 
-                            className='hover:bg-sky-300 border rounded-xl px-6 py-2'
+                            // className='hover:bg-sky-300 border rounded-xl px-6 py-2'
+                            className='btn-card'
                             onClick={handleEnroll}
                             disabled={enrolled} 
                         >
-                            {enrolled ? 'Inscripto' : 'Inscribirse'} 
+                            {enrolled ? 'Inscrito' : 'Inscribirse'} 
                         </button>
                     </div>
                 </div>
