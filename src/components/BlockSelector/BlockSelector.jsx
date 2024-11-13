@@ -8,13 +8,14 @@ const BlockSelector = () => {
     const times = ['10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00'];
 
     const [availability, setAvailability] = useState([
-        [false, true, false, true, true, true, false, true], // 2 de sept
-        [true, true, false, true, true, true, true, true],   // 3 de sept
-        [true, true, true, true, false, true, true, true],   // 4 de sept
-        [true, true, true, true, true, true, true, false],   // 5 de sept
-        [true, true, false, true, true, true, true, true],   // 6 de sept
-        [true, true, true, false, true, true, true, true],   // 7 de sept
-        [true, true, false, true, true, false, true, true],  // 8 de sept
+        [false, true, false, true, true, true, false], // 10:00
+        [true, true, false, true, true, true, true],   // 11:00
+        [true, true, true, true, false, true, true],   // 12:00
+        [true, true, true, true, true, true, true],   // 13:00
+        [true, true, false, true, true, true, true],   // 14:00
+        [true, true, true, false, true, true, true],   // 15:00
+        [true, true, false, true, true, false, true],  // 16:00
+        [false, true, false, false, true, false, true],  // 17:00
     ]);
 
     const [selectedSlots, setSelectedSlots] = useState([]);
@@ -43,17 +44,23 @@ const BlockSelector = () => {
 
     return (
 <div className="mt-6 flex flex-col items-center">
-            <div className="flex flex-col space-y-2">
+            <div className="flex flex-col space-y-1">
                 <div className="flex">
                     <div className="w-24"></div>
-                    {times.map((time, index) => (
+                    {/* {times.map((time, index) => (
                         <div key={index} className="w-24 text-center font-semibold">
                             {time}
+                        </div>
+                    ))} */}
+
+                    {days.map((day, index) => (
+                        <div key={index} className="w-24 text-center font-semibold">
+                            {day}
                         </div>
                     ))}
                 </div>
 
-                {days.map((day, dayIndex) => (
+                {/* {days.map((day, dayIndex) => (
                     <div key={dayIndex} className="flex items-center">
                         <div className="w-24 p-2 text-center bg-white border border-black rounded-lg font-medium">
                             {day}
@@ -73,10 +80,32 @@ const BlockSelector = () => {
                             ></div>
                         ))}
                     </div>
+                ))} */}
+
+                {times.map((time, timeIndex) => (
+                    <div key={timeIndex} className="flex items-center">
+                        <div className="w-24 p-2 text-center bg-white border border-black rounded-lg font-medium">
+                            {time}
+                        </div>
+
+                        {availability[timeIndex].map((isAvailable, dayIndex) => (
+                            <div
+                                key={dayIndex}
+                                className={`w-20 h-10 m-2 border-2 rounded-md flex justify-center items-center cursor-pointer ${
+                                    isAvailable
+                                        ? selectedSlots.includes(`${timeIndex}-${dayIndex}`)
+                                            ? 'bg-yellow-400' // Selected
+                                            : 'bg-green-300'  // Available
+                                        : 'bg-red-300 cursor-not-allowed' 
+                                }`}
+                                onClick={() => isAvailable && handleSlotClick(timeIndex, dayIndex)}
+                            ></div>
+                        ))}
+                    </div>
                 ))}
             </div>
             <button
-                className="mt-5 px-6 py-3 bg-gray-300 rounded-md font-bold hover:bg-gray-400 focus:outline-none"
+                className="mt-4 px-6 py-3 bg-gray-300 rounded-md font-bold hover:bg-gray-400 focus:outline-none"
                 onClick={handleReserve}
             >
                 Reservar
