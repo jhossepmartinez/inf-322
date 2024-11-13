@@ -67,19 +67,25 @@
         "time": "10:00",
         "instructor": "David Lee",
         "courseCode": 401,
-        "weekDay": "Viernes"
+        "courtName": "Gimnasio Principal",
+        "weekDay": "Viernes",
+        "courtImage": "https://usm.cl/wp-content/uploads/2024/06/campeonatos-SJ.jpg"
       },
       {
         "time": "12:00",
         "instructor": "Laura Wilson",
         "courseCode": 402,
-        "weekDay": "Viernes"
+        "courtName": "Cancha de arena",
+        "weekDay": "Viernes",
+        "courtImage": "https://i0.wp.com/bcrd.org/wp-content/uploads/2022/10/Sand_Volleyball_Hero1.jpg?fit=1024%2C682&ssl=1"
       },
       {
         "time": "14:00",
         "instructor": "Michael Clark",
         "courseCode": 403,
-        "weekDay": "Sabado"
+        "courtName": "Gimnasio Principal",
+        "weekDay": "Sabado",
+        "courtImage": "https://usm.cl/wp-content/uploads/2024/06/campeonatos-SJ.jpg"
       }
     ]
   }
