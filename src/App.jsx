@@ -36,7 +36,7 @@ function App() {
             <Layout />
             <ToastContainer position="top-right" autoClose={3000} hideProgressBar={true} />
             <Routes>
-                <Route path="/" element={<div className='flex h-screen'><Home /></div>} />
+                <Route path="/" element={<div className=' h-screen'><Home /></div>} />
                 <Route path="/talleres" element={<Extracurriculars />}/>
                 <Route path="/selecciones" element={<Selections />} />
                 <Route path="/gimnasio" element={<Gyms/>}/>
