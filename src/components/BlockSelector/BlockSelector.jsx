@@ -106,8 +106,13 @@ const BlockSelector = () => {
                 ))}
             </div>
             <button
-                className={`mt-4 px-6 py-3 text-white bg-gray-300 rounded-md font-bold focus:outline-none ${selectedSlots.length !== 0 ? 'cursor-pointer bg-[#005E90] transition-colors duration-300 transform transition-transform duration-200 hover:scale-[1.03]' : 'cursor-not-allowed'}`}
+                className={`mt-4 px-6 py-3 text-white rounded-md font-bold focus:outline-none ${
+                    selectedSlots.length !== 0 
+                        ? 'cursor-pointer bg-[#005E90] transition-colors duration-300 transform hover:bg-[#004070] hover:scale-[1.03]' 
+                        : 'cursor-not-allowed bg-gray-300'
+                }`}
                 onClick={handleReserve}
+                disabled={selectedSlots.length === 0}
             >
                 Reservar
             </button>
